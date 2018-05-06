@@ -1,0 +1,31 @@
+<ion-view style="" class=" " id="page4" title="signin" hide-nav-bar="true">
+    <ion-content class="theme-bg">
+		<div class="bms-wrapper">
+			<div class="bms-wrapper-inner">
+				<div class="bms-logo">
+					<img src="img/bms-logo.png">
+				</div>
+			<form ng-submit="loginForm.$valid &&doSignIn()" name="loginForm">
+				<div class="bms-sign-details">
+					<input class="bms-sign-input" type="text" name="username" placeholder="Username or E-mail or Phone" ng-model="loginData.username" required>
+					  <div class="error" ng-show="submitted && loginForm.username.$error.required">This field is required.</div>
+
+					<input class="bms-sign-input1" type="password" placeholder="Password" name="password" ng-model="loginData.password" required>
+					  <div class="error" ng-show="submitted && loginForm.password.$error.required">Password is required.</div>
+
+					<button class="bms-sign-btn" type="submit" ng-click="submitted=true">Sign In</button>
+					<button class="bms-sign-btn" type="submit" ui-sref="menu.home">Skip to home</button>
+					<div ng-show="showMessage" class="{{class}}">
+                        {{ message }}
+                    </div>
+				</div>
+			</form>
+			</div>
+			<div class="bms-sign-footer">
+				<h1 ui-sref="signup">New to Bookmysalon ? Sign Up now !</h1>
+			</div>
+		</div>
+		
+		
+    </ion-content>
+</ion-view>

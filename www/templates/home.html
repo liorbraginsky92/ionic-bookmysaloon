@@ -1,0 +1,94 @@
+<ion-view style="" class=" " id="page1" title="Home">
+<ion-nav-title>
+	<div class="bms-head-title text-align-center text-theme">
+		<input class="bms-search-input2" type="text" ng-change="searchShop()" ng-model="data.search" placeholder="Find a salon or treatment" >
+	</div>
+</ion-nav-title>
+<ion-nav-buttons side="right">
+		 <i class="icon ion-ios-home-outline bms-right-icon" ng-click="profile()"></i>
+</ion-nav-buttons>
+    <ion-content class="theme-bg2">
+		<div class="bms-wrapper">
+		<div class="bms-search1">
+			
+			<input class="bms-search-input" type="text"  placeholder="City" ng-model="city" id="country" readonly>
+		</div>
+		<!-- <div class="menu_simple" ng-show="showCity">
+		      <ul>
+		         <li ng-repeat="citys in cities|filter:city" ng-click='hidecityList(citys.city)'><a href="#">{{citys.city}}</a></li>
+		      </ul>
+		      <ul  ng-if="citys.city!=city">
+		         <li ><a href="#">No results</a></li>
+		      </ul>
+        </div> -->
+		
+		<ul ng-init="get_shops()">
+
+			<li ng-show="notfilter">
+			<div class="bms-shopdetails">
+				<div class="bms-shop" ng-repeat="shopDtl in shopDetails|filter:data.search">
+					<div class="bms-shop-banner">
+					<div class="bms-rated">{{shopDtl.total_rating /shopDtl.rating_count}}.0</div>
+					<!-- <div class="bms-call1"><img src="img/bms-call1.png"></div> -->
+						
+						<!-- <div class="bms-fav" ><img src="img/bms-fav.png"></div> -->
+						<img src="{{shopDtl.image}}">
+					</div>
+					<div class="bms-shop-name">
+					<h6>{{shopDtl.shop_name}}, {{shopDtl.location}}</h6>
+					 <raty id="star"  score="{{shopDtl.total_rating /shopDtl.rating_count}}" number="5"></raty>
+					<button class="bms-book-btn1"  ng-click="viewShopDetails(shopDtl.id)" >View Details</button>
+					</div>
+				</div>
+			</div>
+			</li>
+			<!-- filter -->
+			<li ng-show="filtershow">
+			<div class="bms-shopdetails" >
+				<div class="bms-shop" ng-repeat="shopfilter in shops_detils|filter:data.search">
+					<div class="bms-shop-banner">
+					<div class="bms-rated">{{shopfilter.total_rating /shopfilter.rating_count}}.0</div>
+					<!-- <div class="bms-call1"><img src="img/bms-call1.png"></div>
+						<div class="bms-fav"><img src="img/bms-fav.png"></div> -->
+						<img src="{{shopfilter.image}}">
+					</div>
+					<div class="bms-shop-name">
+					<h6>{{shopfilter.shop_name}}, {{shopfilter.location}}</h6>
+					 <raty id="star" score="{{shopfilter.total_rating /shopfilter.rating_count}}" number="5"></raty>
+					<button class="bms-book-btn1"  ng-click="viewShopDetails(shopfilter.id)" >View Details</button>
+					</div>
+				</div>
+			</div>
+			</li>
+		 <!-- filter -->
+		 <!-- popularity -->
+
+			<li ng-show="popshow">
+
+			<div class="bms-shopdetails" >
+				<div class="bms-shop" ng-repeat="sorting_data in popularity|filter:data.search">
+					<div class="bms-shop-banner">
+					<div class="bms-rated">{{sorting_data.total_rating /sorting_data.rating_count}}.0</div>
+					<!-- <div class="bms-call1"><img src="img/bms-call1.png"></div>
+						<div class="bms-fav"><img src="img/bms-fav.png"></div> -->
+						<img src="{{sorting_data.image}}">
+					</div>
+					<div class="bms-shop-name">
+					<h6>{{sorting_data.shop_name}}, {{sorting_data.location}}</h6>
+					 <raty id="star" score="{{sorting_data.total_rating /sorting_data.rating_count}}" number="5"></raty>
+					<button class="bms-book-btn1"  ng-click="viewShopDetails(sorting_data.id)" >View Details</button>
+					</div>
+				</div>
+			</div>
+			</li>
+		 <!-- popularity -->
+			
+		</ul>
+		<div ng-show="messagefilter" class="no-result">{{message}}</div>
+		</div>
+    </ion-content>
+	<div class="bms-footer" >
+		<li  class="footer4" style="width:50%;" ng-click="sortPopup()">SORT BY</li>
+		<li  class="footer5" style="width:50%;"  ng-click="filterModal.show()">FILTER BY</li>
+	</div>
+</ion-view>

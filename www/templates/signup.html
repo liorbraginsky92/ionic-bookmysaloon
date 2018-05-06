@@ -1,0 +1,38 @@
+<ion-view style="" class=" " id="page5" title="signup" hide-nav-bar="true">
+    <ion-content class="theme-bg">
+		<div class="bms-wrapper">
+			<div class="bms-wrapper-inner">
+				<div class="bms-logo">
+					<img src="img/bms-logo.png" style="width:160px;">
+				</div>
+			<form  ng-submit="regForm.$valid &&doSignUp()" name="regForm" >
+				<div class="bms-sign-details">
+					<input class="bms-sign-input-none" type="text" placeholder="Username" name="username"  ng-model="regData.username" ng-minlength="6" required>
+					  <div class="error" ng-show="submitted && regForm.username.$error.required">Username is required.</div>
+                      <div class="error" ng-show="regForm.username.$touched && regForm.username.$error.minlength">Username should be minimum 6 characters.</div>
+
+					<input class="bms-sign-input-none" type="email" placeholder="E-mail" name="email_id" ng-model="regData.email_id" required>
+					  <div class="error" ng-show="submitted  && regForm.email_id.$error.required">Email-Id is required.</div>
+                      <div class="error" ng-show="regForm.email_id.$touched && regForm.email_id.$invalid">Invalid Email-Id.</div>
+
+					<input class="bms-sign-input-none" type="password" placeholder="Password" name="password"  ng-model="regData.password" required>
+					  <div class="error" ng-show="submitted  && regForm.password.$error.required">Password is required.</div>
+
+					<input class="bms-sign-input-none" type="text" placeholder="Phonenumber" name="phone_no" ng-model="regData.phone_no" numbers-only required>
+					   <div class="error" ng-show="regForm.phone_no.$touched && regForm.phone_no.$error.minlength">Phone number should have minimum 5 characters.</div>
+                       <div class="error" ng-show="regForm.phone_no.$touched && regForm.phone_no.$error.minlength">Phone number could not exceed more than 10 characters.</div>
+					<p>
+					
+					<input id="check1" type="checkbox" name="checkbox" value="check1" ng-model="checkbox" required>
+			        <label for="check1" style="position: relative;margin-right: 20px;"></label>
+					For read and accept the Terms User Agreement.</p>
+					  <div class="error" ng-show="submitted && regForm.checkbox.$error.required">This field is required.</div>
+					
+					<button class="bms-sign-btn" type="submit" ng-click="submitted=true">Sign Up</button>
+					<button class="bms-sign-btn" type="submit" ui-sref="menu.home">Skip to home</button>
+				</div>
+			</form>	
+			</div>
+		</div>
+    </ion-content>
+</ion-view>

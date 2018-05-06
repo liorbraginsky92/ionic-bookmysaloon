@@ -1,0 +1,29 @@
+<ion-view style="" class=" " id="page11" title="mybooking">
+<ion-nav-title>
+<div class="bms-head-title text-align-left">
+	  History
+	  </div>
+</ion-nav-title>
+<ion-nav-buttons side="right">
+		<i class="icon icon-left ion-ios-search-strong bms-right-icon"></i>
+</ion-nav-buttons>
+    <ion-content class="theme-bg2">
+		<div class="bms-wrapper">
+			<div class="bms-history-wrap">
+				<div class="bms-history-head">ALL ACTIVITIES<i class="icon icon-right ion-android-more-vertical float-r" style="color:#a8a8a8;font-size:25px"></i></div>
+				<ul>
+					<li ng-repeat="bkng in userbookings">
+					<h4 class="float-l">{{bkng.shop_name}}</h4>
+					<p class="float-r" ng-click="bookinghistory(bkng.shop_id,bkng.shop_name,bkng.booking_date,bkng.booking_time,bkng.services,bkng.total,bkng.comments,bkng.rating,bkng.booking_id)" menu-close>View Details<i class="icon icon-right ion-ios-arrow-forward bms-view-arw"></i></p>
+					</li>
+				    <li ng-show="msgbk">
+				    <h4 class="float-l">{{msg}}</h4>
+				    </li>
+					
+				</ul>
+				
+			</div>
+			
+		</div>
+    </ion-content>
+</ion-view>

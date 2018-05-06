@@ -1,0 +1,86 @@
+<ion-modal-view>
+        <ion-header-bar class="bms-filter-modal">
+			 <button class="bms-filter-btn" ng-click="filterModal.hide()"><i class="ion-ios-arrow-back icon icon-left" style="vertical-align: -2px;margin-right: 8px;"></i>Filter By</button>
+			 <div class="bms-filter-btn-bay">
+				<button class="bms-filter-apply" ng-click="filterModal.hide();filter_shops()">APPLY</button>
+				<button class="bms-filter-clear" ng-click="filterModal.hide()">CLEAR</button>
+			 </div>
+        </ion-header-bar>
+        <ion-content class="height100">
+			<div class="bms-filter-pop-div">
+				<div class="bms-filter-tab-div">
+					<ul>
+						<li class="active" ng-click="srvc()" id="service"><img src="img/bms-service.png"><p>SERVICES</p></li>
+						<hr>
+						<li  ng-click="pric()" id="price"><img src="img/bms-price.png"><p>PRICES AND OFFERS</p></li>
+						<hr>
+						<li ng-click="gndr()" id="gender"><img src="img/bms-pop.png"><p>GENDER</p></li>
+						<hr>
+						<li ng-click="lctn()" id="location"><img src="img/bms-location.png"><p>LOCATION</p></li>
+					</ul>
+			
+				</div>
+				<form class="shop_filter_form" id="shop_filter_form">
+					<!-- <input type="hidden" name="location" > -->
+				<div class="bms-filter-tab-content">
+					<ul>
+						<li ng-show="service" ng-repeat="servc in srvcs">
+							<div class="bms-check">
+								<input id="{{servc.id}}" type="checkbox" name="services" value="{{servc.id}}">
+								<label for="{{servc.id}}" class="bms-check-list">{{servc.service_name}}</label>
+							</div>
+						</li>
+
+						<li ng-show="price">
+							<div class="bms-check">
+								<input id="check40" type="checkbox" name="offers[]" value="40">
+								<label for="check40" class="bms-check-list">Above 40% off </label>
+							</div>
+
+						</li>
+						<li ng-show="price">
+						    <div class="bms-check">
+								<input id="check20" type="checkbox" name="offers[]" value="20">
+								<label for="check20" class="bms-check-list">Above 20% off </label>
+							</div>
+					    </li>
+					    <li ng-show="price">
+						    <div class="bms-check">
+								<input id="check10" type="checkbox" name="offers[]" value="10">
+								<label for="check10" class="bms-check-list">Above 10% off </label>
+							</div>
+					    </li>
+					    <li ng-show="gender">
+							<div class="bms-check">
+								<input id="check3" type="checkbox" name="gender[]" value="1">
+								<label for="check3" class="bms-check-list">Unisex</label>
+							</div>
+						</li>
+						<li ng-show="gender">
+							<div class="bms-check">
+								<input id="checkm" type="checkbox" name="gender[]" value="2">
+								<label for="checkm" class="bms-check-list">Men</label>
+							</div>
+						</li>
+						<li ng-show="gender">
+							<div class="bms-check">
+								<input id="checkw" type="checkbox" name="gender[]" value="3">
+								<label for="checkw" class="bms-check-list">Women</label>
+							</div>
+						</li>
+						
+						<li ng-show="location">
+							<div class="bms-check">
+								<input id="check4" type="text" name="location" value="{{current_city}}" placeholder="Type to filter(eg:Kochi)">
+								
+							</div>
+						</li>
+						
+						
+						
+					</ul>
+				</div>
+			    </form>
+			</div>
+		 </ion-content>
+      </ion-modal-view>

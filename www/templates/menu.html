@@ -1,0 +1,59 @@
+<ion-side-menus style="" enable-menu-with-back-views="false" >
+    <ion-side-menu-content>
+        <ion-nav-bar class="bar-stable">
+            <ion-nav-back-button></ion-nav-back-button>
+            <ion-nav-buttons side="left">
+                <button class="button button-icon button-clear ion-navicon" menu-toggle="left"></button>
+            </ion-nav-buttons>
+        </ion-nav-bar>
+        <ion-nav-view name="side-menu21"></ion-nav-view>
+    </ion-side-menu-content>
+    <ion-side-menu side="left" id="side-menu21" class="bms-side-bg">
+        <ion-content padding="false" class="side-menu-left theme-side">
+			<div class="bms-side-menu-wrap">
+				<div class="bms-side-menu-head" ng-show="logs">
+					<div class="bms-side-prof">
+						<img src="{{img}}">
+					</div>
+					
+					<h4>{{uname}}</h4>
+				</div>
+				<div class="bms-side-menu-head" ng-show="notlog">
+					<div class="bms-side-prof">
+						<img src="img/logo1.png">
+					</div>
+				</div>
+				<div class="bms-side-body">
+					<ul>
+						<li>
+							<div class="bms-side-icon home"></div>
+							<div class="bms-side-detail" ui-sref="menu.home" menu-close>HOME</div>
+							<div class="clear"></div>
+						</li>
+						<li ng-click="sortPopup()">
+							<div class="bms-side-icon settings" ></div>
+							<div class="bms-side-detail" menu-close>LOCATION</div>
+							<div class="clear"></div>
+						</li>
+						<li ng-show="signin">
+							<div class="bms-side-icon booking" ></div>
+							<div class="bms-side-detail" ui-sref="signup" menu-close>SIGN UP</div>
+							<div class="clear"></div>
+						</li>
+						<li ng-show="signin">
+							<div class="bms-side-icon logout"></div>
+							<div class="bms-side-detail" ui-sref="signin" menu-close>SIGN IN</div>
+							<div class="clear"></div>
+						</li>
+						<li ng-show="logout">
+							<div class="bms-side-icon logout"></div>
+							<div class="bms-side-detail" ng-click="lgout()" menu-close>LOG OUT</div>
+							<div class="clear"></div>
+						</li>
+					</ul>
+				</div>
+					
+			</div>
+        </ion-content>
+    </ion-side-menu>
+</ion-side-menus>

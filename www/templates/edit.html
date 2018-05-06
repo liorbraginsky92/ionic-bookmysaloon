@@ -1,0 +1,42 @@
+<ion-modal-view>
+  <form ng-submit="editProfile()">
+        <ion-header-bar class="bms-filter-modal">
+			 <button class="bms-filter-btn" style="width:150px;"><i class="ion-ios-arrow-back icon icon-left" ng-click="editModal.hide();" style="vertical-align: -2px;margin-right: 8px;"></i>Edit Profile</button>
+			 
+			 <div class="bms-filter-btn-bay">
+				<button class="bms-filter-apply" type="submit" ng-click="editModal.hide();submitted=true">SAVE</button>
+			 </div>
+        </ion-header-bar>
+        <ion-content class="height100 theme-bg3">
+      
+			<div class="bms-edit-pop-div">
+				<input class="bms-edit-prof-input" type="text" ng-model="val.firstname" placeholder="Firstname" name="firstname" >
+				  
+
+				<input class="bms-edit-prof-input" type="text" ng-model="val.lastname" placeholder="Lastname" name="lastname" >
+				  
+
+				<input class="bms-edit-prof-input" type="email" ng-model="val.email_id" placeholder="email_id" name="email_id" >
+				  
+
+				<input class="bms-edit-prof-input" type="text" ng-model="val.country" placeholder="Country" name="country" >
+				 
+
+				<input class="bms-edit-prof-input" type="text" ng-model="val.city" placeholder="City" name="city" >
+				   
+
+				<input class="bms-edit-prof-input" type="text" ng-model="val.phone_no" placeholder="Phone Number" name="phone_no" numbers-only >
+				   
+
+				
+				<!-- <div class="bms-image-bay">
+				<div class="bms-edit-prof-pic">
+					<img src="img/bms-photo.png">
+					<div class="bms-edit-btn11"><input type="file" ng-model="profile_pic"></div>
+				</div>
+				</div> -->
+			</div>
+	
+		 </ion-content>
+		 	</form>	
+      </ion-modal-view>

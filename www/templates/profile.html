@@ -1,0 +1,38 @@
+<ion-view style="" class=" " id="page12" title="profile" hide-nav-bar="true">
+    <ion-content class="theme-bg3">
+	 <ion-header-bar class="bar-stableb theme-dark">
+	 <div class="bms-icon">
+		<div class="icon-edit" ng-click="editModal.show()"></div>
+	 </div>
+	  <div class="bms-head-title text-align-center text-theme">
+	  SMART SALON
+	  </div>
+	  <!-- <div class="bms-icon">
+		<div class="icon-search" ui-sref="usersearch"></div>
+		</div> -->
+	<div class="bms-icon" ui-sref="signin">
+		<div class="icon-frwrd"></div>
+	</div>
+    </ion-header-bar>
+		<div class="bms-wrapper" style="padding-top: 44px;">
+			<div class="bms-profile-bay">
+				<div class="bms-profile-photo"><img src="{{profile_pic}}"></div>
+				<h1>{{username}}</h1>
+				<p ng-show="{{city!=''}}"><span><img src="img/bms-loc.png"></span>{{city}},{{country}}</p>
+				<div class="arrow-down"></div>
+			</div>
+			<div class="bms-landing-list">
+				<ul>
+					<li class="l1" ng-click="mybooking()">My Bookings</li>
+					<li  class="l2" ng-click="userfavshops()" style="border-top:1px solid #e65b50;border-bottom:1px solid #e65b50;">My Favourate Shops</li>
+					<li class="l3" ng-click="logout()">Log Out</li>
+				</ul>
+			</div>
+		</div>
+    </ion-content>
+	<div class="bms-footer">
+		<li class="footer1" ui-sref="menu.home">NEW</li>
+		<li class="footer2" ui-sref="profile">YOU</li>
+		<li class="footer3" ng-click="mybooking()">BOOK</li>
+	</div>
+</ion-view>

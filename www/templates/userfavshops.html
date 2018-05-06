@@ -1,0 +1,50 @@
+<ion-view style="" class=" " id="page12" title="profile" hide-nav-bar="true">
+ <ion-header-bar class="bar-stableb theme-dark">
+	 <div class="bms-icon">
+		
+	 </div>
+	  <div class="bms-head-title text-align-center text-theme">
+	  FAVOURITE LIST
+	  </div>
+	  <div class="bms-icon">
+		
+		</div>
+
+    </ion-header-bar>
+    <ion-content class="theme-bg2">
+	
+		<div class="bms-wrapper">
+		
+		
+		<ul>
+	
+			<li ng-repeat="fav in favshops">
+			<div class="bms-shopdetails">
+				<div class="bms-shop">
+					<div class="bms-shop-banner">
+					<!-- <div class="bms-rated">3.0</div> -->
+					<!-- <div class="bms-call1"><img src="img/bms-call1.png"></div> -->
+						<div class="bms-fav"><a href="tel:555-555-5555"><img src="img/bms-call1.png"></a></div>
+						<img src="{{fav.image}}">
+					</div>
+					<div class="bms-shop-name">
+					<h6>{{fav.shop_name}}, {{fav.location}}</h6>
+					 <raty id="star" score="{{fav.rating}}" number="5"></raty>
+					<button class="bms-book-btn1" ng-click="viewShopDetails(fav.shid)">View Details</button>
+					</div>
+					
+				</div>
+			</div>
+			</li>
+			<div class="bms-shop-name" ng-show="msgfav">
+					{{msgf}}
+		   </div>
+		</ul>
+		</div>
+    </ion-content>
+	<div class="bms-footer">
+		<li class="footer1" ui-sref="menu.home">NEW</li>
+		<li class="footer2" ui-sref="profile">YOU</li>
+		<li class="footer3" ng-click="mybooking()">BOOK</li>
+	</div>
+</ion-view>

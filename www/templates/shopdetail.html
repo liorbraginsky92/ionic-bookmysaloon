@@ -1,0 +1,90 @@
+<ion-view style="" class=" " id="page6" title="shopdetail">
+<ion-nav-title>
+	<div class="bms-head-title text-align-left">
+	  {{shopdata[0].shop_name}}
+	  </div>
+</ion-nav-title>
+<ion-nav-buttons side="right">
+	<!-- <button class="bms-icon">
+		<i class="icon icon-left ion-ios-bell"></i>
+	 </button>
+	 <button class="bms-icon">
+		<i class="icon icon-left ion-bookmark"></i>
+	 </button> -->
+</ion-nav-buttons>
+    <ion-content class="theme-bg2">
+		<div class="bms-wrapper">
+			<div class="bms-shopdetails">
+				<div class="bms-shop">
+					<div class="bms-shop-banner">
+					<!-- <div class="bms-rated">{{shopdata[0].total_rating /shopdata[0].rating_count}}</div> -->
+					<div class="bms-call1"><a href="tel:555-555-5555"><img src="img/bms-call1.png"></a></div>
+						<div class="bms-fav" ng-click="favShop(shopdata[0].id)" ng-hide="favid=='fav'"><img src="img/heart-on.png"></div>
+						<div class="bms-fav" ng-click="favShop(shopdata[0].id)" ng-show="favid=='fav'"><img src="img/bms-fav.png"></div>
+						<img src="{{shopdata[0].image}}">
+					</div>
+
+					<div class="bms-shop-name">
+					<h6>{{shopdata[0].shop_name}}, {{shopdata[0].location}}</h6>
+					 <raty id="star" score="{{shopdata[0].total_rating /shopdata[0].rating_count}}" number="5"></raty>
+					<button class="bms-book-btn1" ng-click="booknow(shopdata[0].id,shopdata[0].shop_name)">Book Now</button>
+					</div>
+				</div>
+				<div class="bms-list">
+					<ul>
+						<li>
+							<h4>Description</h4>
+							<p>{{shopdata[0].description}}</p>
+						</li>
+						<li>
+							<h4>Working time</h4>
+							<p>{{shopdata[0].working_time}}</p>
+						</li>
+						<li>
+							<h4>Our Services</h4>
+							<ul class="bms-service-list">
+								<li ng-repeat="service in services">{{service[0]}}</li>
+							</ul>
+						</li>
+						<li>
+							
+							<h4>Our Gallery</h4>
+							<ul class="bms-gallery-list">
+								<li ng-repeat="glry in gallery" ng-click="gallery_img(glry);"><img src="{{glry}}"><div class="c1"><i class="icon ion-ios-search-strong"></i></div></li>
+							</ul>
+							
+						</li>
+					</ul>
+				</div> 
+				<div class="bms-list">
+					<div class="bms-review">
+						<div class="bms-review-head">
+						<div class="d1">User Reviews <!-- <strong style="color:#e6686b;">(5)</strong> --></div><!-- <div class="d1 text-align-right">View All<i class="icon icon-right ion-ios-arrow-forward bms-view-arw" style="top:2px;"></i></div> -->
+						</div>
+						<ul class="bms-review-list">
+							<li ng-repeat="review in reviews">
+								<div class="bms-reviewr-name">
+									<div class="bms-reviewr-pic">
+										<img src="{{review.profile_pic}}">
+									</div>
+									<h1>{{review.username}}</h1>
+									<p>{{review.comments}}</p>
+									<div class="bms-usr-int-bay">
+										<!-- <div class="bms-like">8</div>
+										<div class="bms-unlike">3</div>
+										<div class="bms-comment">5</div> -->
+									</div>
+								</div>
+							</li>
+						
+							
+							
+							
+						</ul>
+						
+					</div>
+				</div>
+			</div>
+		</div>
+    </ion-content>
+</ion-view>

@@ -1,0 +1,80 @@
+<ion-view style="" class=" " id="page7" title="date">
+<ion-nav-title>
+	<div class="bms-head-title">
+	  {{s_name}}
+	 </div>
+</ion-nav-title>
+<ion-nav-buttons side="right">
+		<i class="icon icon-left ion-ios-search-strong bms-right-icon"></i>
+</ion-nav-buttons>
+    <ion-content class="theme-bg2" >
+		<div class="bms-wrapper">
+		
+			<div class="bms-booking-wrap-inner">
+				<div class="bms-date-wrap">
+					<div class="bms-date-inside">
+						<div class="bms-date-inside1" ng-show="select">
+							<div class="bms-date-left">
+							<div class="bms-date-circle1">
+								
+								<div>
+									<h4>{{day}}</h4>
+									<h3>{{month}}</h3>
+									<h2>{{year}}</h2>
+								</div>
+							</div>
+							</div>
+							<div class="bms-date-left">
+							<div class="bms-date-circle">
+								<div class="bms-date-circle-inner">
+									<p>{{timet}}</p>
+								</div>
+							</div>
+							</div>
+							<div class="clear"></div>
+						</div>
+						<div class="bms-date-inside2" ng-show="notselectdate">
+							<div class="bms-date-left">
+								<div class="bms-date-circle12">
+									<img src="img/ques.png">
+								</div>
+							</div>
+							<div class="bms-date-left">
+							<div class="bms-date-circle">
+								<div class="bms-date-circle-inner2">
+									<img src="img/ques1.png">
+								</div>
+							</div>
+							</div>
+							<div class="clear"></div>
+						</div>
+					</div>
+					<div class="bms-date-bottom date">
+							<ionic-datetimepicker  input-obj="datetimepickerObject" > <button class="bms-pick-btn">PICK DATE & TIME</button></ionic-datetimepicker>
+					<input  type="hidden" name="datetime" ng-model="datetime" value="{{dateAsString}}">
+						<div class="clear"></div>
+					</div>
+					<div ng-show="dat" class="bms-alert">Please select Date</div>
+				</div>
+				<div class="bms-booking-wrap">
+				<h1>CHOOSE YOUR SERVICE</h1>
+				<ul class="bms-service-list">
+					<li id="ck-button" ng-repeat="servcs in services">
+						<label >
+							<input id="service_{{services[1]}}" type="checkbox" name="services" value="{{servcs}}"><span>{{servcs[0]}}</span>
+						</label>
+					</li>
+					
+				</ul>
+				<div ng-show="fac" class="bms-alert">Please select Facilities</div>
+					<div class="bms-apply">
+						<button class="bms-apply-btn" ng-click="bookingConf()">Apply Now</button>
+					</div>
+				</div>
+				
+			</div>
+		
+		</div>
+
+    </ion-content>
+</ion-view>

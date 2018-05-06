@@ -1,0 +1,71 @@
+<ion-view style="" class=" " id="page13" title="bookinghistory">
+<ion-nav-title>
+<div class="bms-head-title text-align-left">
+	  History
+	  </div>
+</ion-nav-title>
+<ion-nav-buttons side="right">
+		<i class="icon ion-ios-home-outline bms-right-icon" ui-sref="profile"></i>
+</ion-nav-buttons>
+    <ion-content class="theme-bg2">
+			<div class="bms-wrapper">
+			<div class="bms-history-details-wrap">
+				<div class="bms-history-details-wrap-inner">
+					<ul>
+						<li >
+							<h1>{{shopname|uppercase}}</h1>
+							<ul class="bms-list-inside">
+								<li style="width:80% !important;">DATE</li>
+								<li  style="width:20% !important;" >TIME</li>
+							</ul>
+							<ul class="bms-list-inside">
+								<li  style="width:80% !important;">{{bookingdate}}</li>
+								<li  style="width:20% !important;">{{bookingtime}}</li>
+							</ul>
+						</li>
+						<li>
+							<h1>SERVICES</h1>
+							<ul class="bms-list-inside">
+								<li class="bms-list-child1" ng-repeat="servces in services">{{servces}}</li>
+								<!-- <li class="bms-list-child2" >$ 20.00</li> -->
+							</ul>
+							<!-- <ul class="bms-list-inside">
+								<li class="bms-list-child1">Massage</li>
+								<li class="bms-list-child2">$ 35.00</li>
+							</ul> -->
+						</li>
+						<!-- <li style="padding-top:20px;border:none;">
+							<ul class="bms-list-inside">
+								<li class="bms-list-child1"><h1>SUBTOTAL</h1></li>
+								<li class="bms-list-child2" >$ 20.00</li>
+							</ul>
+							<ul class="bms-list-inside">
+								<li class="bms-list-child1"><h1>INTERNET HANDLING CHARGES</h1></li>
+								<li class="bms-list-child2">$ 35.00</li>
+							</ul>
+						</li> -->
+						
+					</ul>
+				</div>
+				<ul style="border:1px solid #e1e1e1;border-top:none;background:#fdedef;padding-left:10px;padding-right:10px;">
+					<li style="padding-top:20px;border:none;background:#fdedef;">
+							<ul class="bms-list-inside">
+								<li class="bms-list-child1"><h1><b>TOTAL AMOUNT PAYED</b></h1></li>
+								<li class="bms-list-child2" >$ <b style="color:#f0525f;">{{total}}</b></li>
+							</ul>
+						</li>
+				</ul>
+				<div class="bms-book-rate-wrap">
+				<h3>IF YOU LIKE OUR SERVICES PLEASE DONT FORGET TO RATE IT</h3>
+				<p>Your opinion is highly appreciated.</p>
+				<p> It help us in developing new and better services</p>
+				<div class="bms-ratting">
+					 
+				</div>
+				<button class="bms-edit-btn" ng-click="rattingPopup()">EDIT RATING</button>
+				<div>{{message}}</div>
+				</div>
+			</div>
+		</div>
+	</ion-content>
+</ion-view>
